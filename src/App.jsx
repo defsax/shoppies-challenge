@@ -1,7 +1,8 @@
 import Search from './components/search';
-import Results from './components/results';
+import Results from './components/result';
+// import Results from './components/resultList';
 import Nomination from './components/nomination';
-import NominationList from './components/nominations-list';
+import NominationList from './components/nominationList';
 
 export default function App() {
   return (
