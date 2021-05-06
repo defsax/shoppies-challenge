@@ -3,7 +3,7 @@ import Result from './result';
 export default function ResultList(props) {
   const { resultList, onClick, isNominated } = props;
 
-  const movieList = function (array) {
+  const listMovies = function (array) {
     if (array) {
       return array.map((item, index) => {
         return (
@@ -20,8 +20,8 @@ export default function ResultList(props) {
 
   return (
     <div>
-      <p>Results:</p>
-      {movieList(resultList)}
+      <h2>Results:</h2>
+      {listMovies(resultList)}
     </div>
   );
 }

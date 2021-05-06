@@ -13,7 +13,7 @@ export default function Result(props) {
       </p>
       <img src={movie.Poster} alt={movie.Title}></img>
       <button
-        onClick={() => props.onClick(movie.imdbID)}
+        onClick={() => props.onClick(movie)}
         disabled={props.isNominated(movie.imdbID)}
       >
         Nominate
