@@ -1,4 +1,5 @@
 export default function Result(props) {
+  const { movie } = props;
   return (
     <div
       style={{
@@ -8,10 +9,10 @@ export default function Result(props) {
       }}
     >
       <p>
-        {props.movie.Title} ({props.movie.Year})
+        {movie.Title} ({movie.Year})
       </p>
-      <img src={props.movie.Poster} alt={props.movie.Title}></img>
-      <button onClick={() => props.onClick(props.movie.imdbID)}>
+      <img src={movie.Poster} alt={movie.Title}></img>
+      <button onClick={() => props.onClick(movie.imdbID)} disabled={true}>
         Nominate
       </button>
       <br />

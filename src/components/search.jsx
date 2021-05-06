@@ -22,6 +22,7 @@ export default function Search(props) {
           if (response.data.Response !== 'False') {
             const results = response.data.Search;
             props.setValues(results);
+            props.setView('RESULTS', true);
           }
         })
         .catch(function (error) {

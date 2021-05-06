@@ -24,44 +24,23 @@ export default function App() {
   });
 
   const nominateFilm = function (id) {
-    console.log(state);
-    const nominations = [...state.nominations];
-    console.log(nominations);
-    // nominations.push(id);
-    setState({ nominations: this.state.nominations.concat(id) });
-    console.log(nominations);
-
-    // const nominationsList = [state.nominations, id];
-    // if (state.nominations > 1) {
-    //   setState({ nominations: [...state.nominations, id] });
-    // } else {
-    //   setState({ nominations: [id] });
-    // }
-    console.log('nominatefilm function in app. id:', id);
-    console.log('nominations:', state.nominations);
+    setState({ ...state, nominations: state.nominations.concat(id) });
   };
 
   const updateResults = function (results) {
-    console.log(results);
     setState({
       ...state,
       movieList: results,
-      // transition: 'RESULTS',
-      // overwrite: true,
     });
-
-    transition('RESULTS', true);
   };
 
   const setView = function (view, overwrite) {
     transition(view, overwrite);
   };
 
-  // useEffect(() => {
-  //   console.log(state.movieList);
-  //   console.log(state.transition);
-  //   // transition(state.transition, state.overwrite);
-  // }, [state.movieList, state.transition]);
+  useEffect(() => {
+    console.log(state.nominations);
+  }, [state.nominations]);
 
   return (
     <div>
