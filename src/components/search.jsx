@@ -23,6 +23,7 @@ export default function Search(props) {
         .then((response) => {
           if (response.data.Response !== 'False') {
             const results = response.data.Search;
+            console.log(results);
             props.setValues(results);
             props.setView('RESULTS', true);
           }
