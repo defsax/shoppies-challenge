@@ -19,15 +19,9 @@ export default function Search(props) {
       axios
         .get(`http://www.omdbapi.com/?apikey=${KEY}&s=${debouncedText}*`)
         .then((response) => {
-          console.log(response.data);
           if (response.data.Response !== 'False') {
-            console.log(response.data.Search);
             const results = response.data.Search;
-            props.setValues({
-              movieList: results,
-              transition: 'RESULTS',
-              overwrite: true,
-            });
+            props.setValues(results);
           }
         })
         .catch(function (error) {
@@ -40,10 +34,10 @@ export default function Search(props) {
     if (input.length) {
       console.log('non debounced text:', input);
       setSearchText(input);
-      props.setValues({ transition: 'LOADING', overwrite: false });
+      props.setView('LOADING', false);
     } else {
       setSearchText(input);
-      props.setValues({ transition: 'DEFAULT', overwrite: true });
+      props.setView('DEFAULT', true);
     }
   };
 

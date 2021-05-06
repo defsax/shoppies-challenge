@@ -18,22 +18,59 @@ export default function App() {
 
   const [state, setState] = useState({
     movieList: [],
-    transition: 'DEFAULT',
-    overwrite: false,
+    nominations: [],
+    // transition: 'DEFAULT',
+    // overwrite: false,
   });
 
-  useEffect(() => {
-    console.log(state.movieList);
-    console.log(state.transition);
-    transition(state.transition, state.overwrite);
-  }, [state.movieList, state.transition]);
+  const nominateFilm = function (id) {
+    console.log(state);
+    const nominations = [...state.nominations];
+    console.log(nominations);
+    // nominations.push(id);
+    setState({ nominations: this.state.nominations.concat(id) });
+    console.log(nominations);
+
+    // const nominationsList = [state.nominations, id];
+    // if (state.nominations > 1) {
+    //   setState({ nominations: [...state.nominations, id] });
+    // } else {
+    //   setState({ nominations: [id] });
+    // }
+    console.log('nominatefilm function in app. id:', id);
+    console.log('nominations:', state.nominations);
+  };
+
+  const updateResults = function (results) {
+    console.log(results);
+    setState({
+      ...state,
+      movieList: results,
+      // transition: 'RESULTS',
+      // overwrite: true,
+    });
+
+    transition('RESULTS', true);
+  };
+
+  const setView = function (view, overwrite) {
+    transition(view, overwrite);
+  };
+
+  // useEffect(() => {
+  //   console.log(state.movieList);
+  //   console.log(state.transition);
+  //   // transition(state.transition, state.overwrite);
+  // }, [state.movieList, state.transition]);
 
   return (
     <div>
       <h1>The Shoppies</h1>
-      <Search setValues={setState} />
+      <Search setValues={updateResults} setView={setView} />
 
-      {mode === RESULTS && <ResultList resultList={state.movieList} />}
+      {mode === RESULTS && (
+        <ResultList resultList={state.movieList} onClick={nominateFilm} />
+      )}
       {mode === LOADING && <Loading />}
       {mode === DEFAULT && <p>Default</p>}
 
