@@ -26,6 +26,12 @@ export default function App() {
   const nominateFilm = function (id) {
     setState({ ...state, nominations: state.nominations.concat(id) });
   };
+  const isNominated = function (id) {
+    if (state.nominations.includes(id)) {
+      return true;
+    }
+    return false;
+  };
 
   const updateResults = function (results) {
     setState({
@@ -48,7 +54,11 @@ export default function App() {
       <Search setValues={updateResults} setView={setView} />
 
       {mode === RESULTS && (
-        <ResultList resultList={state.movieList} onClick={nominateFilm} />
+        <ResultList
+          resultList={state.movieList}
+          onClick={nominateFilm}
+          isNominated={isNominated}
+        />
       )}
       {mode === LOADING && <Loading />}
       {mode === DEFAULT && <p>Default</p>}
