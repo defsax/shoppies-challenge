@@ -5,7 +5,13 @@ export default function NominationList(props) {
   const listNominations = function (array) {
     if (array) {
       return array.map((item, index) => {
-        return <NominationItem key={index} nomination={item} />;
+        return (
+          <NominationItem
+            key={index}
+            nomination={item}
+            onClick={props.onClick}
+          />
+        );
       });
     }
   };

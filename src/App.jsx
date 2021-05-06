@@ -14,8 +14,6 @@ export default function App() {
 
   const { mode, transition, back } = useVisualMode(DEFAULT);
 
-  // const [movieList, setMovieList] = useState([]);
-
   const [state, setState] = useState({
     movieList: [],
     nominations: [],
@@ -23,6 +21,14 @@ export default function App() {
 
   const nominateFilm = function (movie) {
     setState({ ...state, nominations: state.nominations.concat(movie) });
+  };
+  const removeNomination = function (movie) {
+    setState({
+      ...state,
+      nominations: state.nominations.filter(function (item) {
+        return item.imdbID !== movie.imdbID;
+      }),
+    });
   };
   const isNominated = function (id) {
     //find in array of objects
@@ -66,7 +72,10 @@ export default function App() {
       {mode === LOADING && <Loading />}
       {mode === DEFAULT && <p>Default</p>}
 
-      <NominationList nominations={state.nominations} />
+      <NominationList
+        nominations={state.nominations}
+        onClick={removeNomination}
+      />
     </div>
   );
 }
