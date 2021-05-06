@@ -17,7 +17,9 @@ export default function Search(props) {
     if (debouncedText) {
       const KEY = process.env.REACT_APP_OMDB_API_KEY;
       axios
-        .get(`http://www.omdbapi.com/?apikey=${KEY}&s=${debouncedText}*`)
+        .get(
+          `http://www.omdbapi.com/?apikey=${KEY}&s=${debouncedText}*&type=movie`
+        )
         .then((response) => {
           if (response.data.Response !== 'False') {
             const results = response.data.Search;

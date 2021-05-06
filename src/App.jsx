@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Search from './components/search';
 import ResultList from './components/resultList';
-import Nomination from './components/nominationItem';
 import NominationList from './components/nominationList';
 import Loading from './components/loading';
 
@@ -12,7 +11,7 @@ export default function App() {
   const DEFAULT = 'DEFAULT';
   const RESULTS = 'RESULTS';
 
-  const { mode, transition, back } = useVisualMode(DEFAULT);
+  const { mode, transition } = useVisualMode(DEFAULT);
 
   const [state, setState] = useState({
     movieList: [],
