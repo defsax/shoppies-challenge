@@ -1,45 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { useDebounce, useVisualMode } from '../utils';
+import { useDebounce } from '../utils';
 
-const LOADING = 'LOADING';
-const SEARCH = 'SEARCH';
-const MESSAGE = 'MESSAGE';
-const RESULTS = 'RESULTS';
-
-export default function Search() {
+export default function Search(props) {
   // let myStorage = window.localStorage;
   localStorage.setItem('myCat', 'Tom');
   localStorage.getItem('myCat');
 
-  const [state, setState] = useState({
-    searchText: '',
-    movieList: null,
-  });
+  const [searchText, setSearchText] = useState('');
 
-  const { mode, transition, back } = useVisualMode(SEARCH);
-  const debouncedText = useDebounce(state.searchText, 1000);
+  const debouncedText = useDebounce(searchText, 1000);
 
   useEffect(() => {
-    console.log('debounced text:', debouncedText);
-
     // check length. if not, api will get called when page loads
-    if (debouncedText.length > 0) {
+    if (debouncedText) {
       const KEY = process.env.REACT_APP_OMDB_API_KEY;
       axios
-        .get(`http://www.omsdbapi.com/?apikey=${KEY}&s=${debouncedText}*`)
+        .get(`http://www.omdbapi.com/?apikey=${KEY}&s=${debouncedText}*`)
         .then((response) => {
           console.log(response.data);
-          if (response.data.Response !== 'False ') {
+          if (response.data.Response !== 'False') {
             console.log(response.data.Search);
             const results = response.data.Search;
-            setState({ movieList: results });
-            transition(RESULTS, true);
+            props.setValues({ movieList: results, transition: 'RESULTS' });
           }
         })
         .catch(function (error) {
-          console.error(error.response);
+          console.log(error);
         });
     }
   }, [debouncedText]);
@@ -47,24 +35,20 @@ export default function Search() {
   const handleInput = function (input) {
     if (input.length >= 2) {
       console.log('non debounced text:', input);
-      setState({ searchText: input });
-      transition(LOADING);
-
-      console.log(state);
+      setSearchText(input);
+      props.setValues({ transition: 'LOADING' });
     }
   };
 
   return (
     <div>
-      {/* onSubmit={query()} */}
-      <form>
+      <form onSubmit={(e) => e.preventDefault()}>
         <input
           autoFocus
           type="text"
           onChange={(e) => handleInput(e.target.value)}
         ></input>
       </form>
-      {/* <p>{state.movieList}</p> */}
     </div>
   );
 }
