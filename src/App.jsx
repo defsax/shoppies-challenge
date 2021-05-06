@@ -30,15 +30,15 @@ export default function App() {
     });
   };
   const isNominated = function (id) {
-    //find in array of objects
-    if (
-      state.nominations.find((movie) => {
-        return movie.imdbID === id;
-      })
-    ) {
+    //check if nominations are done first
+    if (state.nominations.length >= 5) {
       return true;
     }
-    return false;
+
+    //find in array of objects
+    return state.nominations.find((movie) => {
+      return movie.imdbID === id;
+    });
   };
 
   const updateResults = function (results) {
@@ -52,6 +52,12 @@ export default function App() {
     transition(view, overwrite);
   };
 
+  const showBanner = function () {
+    if (state.nominations.length >= 5) {
+      return <h2>Nominations Done!</h2>;
+    }
+  };
+
   useEffect(() => {
     console.log(state.nominations);
   }, [state.nominations]);
@@ -59,6 +65,7 @@ export default function App() {
   return (
     <div>
       <h1>The Shoppies</h1>
+      {showBanner()}
       <Search setValues={updateResults} setView={setView} />
 
       {mode === RESULTS && (

@@ -1,6 +1,5 @@
 export default function NominationItem(props) {
   const { nomination } = props;
-  console.log(props);
   return (
     <div>
       <p>
