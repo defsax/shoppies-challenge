@@ -18,13 +18,14 @@ export default function App() {
 
   const [state, setState] = useState({
     movieList: [],
-    transition: '',
+    transition: 'DEFAULT',
+    overwrite: false,
   });
 
   useEffect(() => {
     console.log(state.movieList);
     console.log(state.transition);
-    transition(state.transition);
+    transition(state.transition, state.overwrite);
   }, [state.movieList, state.transition]);
 
   return (
@@ -34,6 +35,7 @@ export default function App() {
 
       {mode === RESULTS && <ResultList resultList={state.movieList} />}
       {mode === LOADING && <Loading />}
+      {mode === DEFAULT && <p>Default</p>}
 
       <Nomination />
       <NominationList />

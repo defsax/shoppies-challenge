@@ -23,7 +23,11 @@ export default function Search(props) {
           if (response.data.Response !== 'False') {
             console.log(response.data.Search);
             const results = response.data.Search;
-            props.setValues({ movieList: results, transition: 'RESULTS' });
+            props.setValues({
+              movieList: results,
+              transition: 'RESULTS',
+              overwrite: true,
+            });
           }
         })
         .catch(function (error) {
@@ -33,10 +37,13 @@ export default function Search(props) {
   }, [debouncedText]);
 
   const handleInput = function (input) {
-    if (input.length >= 2) {
+    if (input.length) {
       console.log('non debounced text:', input);
       setSearchText(input);
-      props.setValues({ transition: 'LOADING' });
+      props.setValues({ transition: 'LOADING', overwrite: false });
+    } else {
+      setSearchText(input);
+      props.setValues({ transition: 'DEFAULT', overwrite: true });
     }
   };
 
