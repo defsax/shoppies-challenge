@@ -1,3 +1,7 @@
+import '../style/css/results.css';
+
+import ribbon from './ribbon.png';
+
 export default function Result(props) {
   const { movie } = props;
 
@@ -17,26 +21,20 @@ export default function Result(props) {
   };
 
   return (
-    <div
-      style={{
-        border: '1px solid black',
-        padding: '0rem 1rem',
-        margin: '1rem',
-      }}
-    >
+    <div className="movie-container">
+      <div className="poster">
+        {setPoster()}
+        <button
+          onClick={() => props.onClick(movie)}
+          disabled={props.isNominated(movie.imdbID)}
+        >
+          Nominate
+        </button>
+        <img alt={'ribbon'} src={ribbon} className="ribbon"></img>
+      </div>
       <p>
         {movie.Title} ({movie.Year})
       </p>
-      {setPoster()}
-
-      <button
-        onClick={() => props.onClick(movie)}
-        disabled={props.isNominated(movie.imdbID)}
-      >
-        Nominate
-      </button>
-      <br />
-      <br />
     </div>
   );
 }

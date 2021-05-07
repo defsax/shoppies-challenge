@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import { useDebounce } from '../utils';
 
+import '../style/css/search.css';
+
 export default function Search(props) {
   // let myStorage = window.localStorage;
   localStorage.setItem('myCat', 'Tom');
@@ -46,7 +48,7 @@ export default function Search(props) {
   };
 
   return (
-    <div>
+    <div className="search-container">
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           autoFocus

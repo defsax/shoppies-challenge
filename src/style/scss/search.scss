@@ -1,0 +1,13 @@
+@import 'mixins';
+
+.search-container {
+  display: flex;
+  flex-basis: 35%;
+  height: 100vh;
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

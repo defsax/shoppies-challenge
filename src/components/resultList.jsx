@@ -18,10 +18,5 @@ export default function ResultList(props) {
     }
   };
 
-  return (
-    <div>
-      <h2>Results:</h2>
-      {listMovies(resultList)}
-    </div>
-  );
+  return <div className="result-list-container">{listMovies(resultList)}</div>;
 }

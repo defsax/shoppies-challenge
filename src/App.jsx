@@ -6,6 +6,10 @@ import Loading from './components/loading';
 
 import { useVisualMode } from './utils';
 
+import './style/css/app.css';
+import './style/css/default.css';
+import './style/css/nav.css';
+
 export default function App() {
   const LOADING = 'LOADING';
   const DEFAULT = 'DEFAULT';
@@ -59,29 +63,46 @@ export default function App() {
   };
 
   useEffect(() => {
+    // const noms = localStorage.getItem('shoppies-nominations');
+    // setState({ ...state, nominations: noms });
     console.log(state.nominations);
-  }, [state.nominations]);
+    // localStorage.setItem('shoppies-nominations', [state.nominations]);
+  }, [state.nominations, state.movieList]);
 
   return (
-    <div>
-      <h1>The Shoppies</h1>
-      {showBanner()}
-      <Search setValues={updateResults} setView={setView} />
+    <div className="app-container">
+      <nav class="nav-bar">
+        <h1>The Shoppies</h1>
+        {showBanner()}
 
-      {mode === RESULTS && (
-        <ResultList
-          resultList={state.movieList}
-          onClick={nominateFilm}
-          isNominated={isNominated}
+        <NominationList
+          nominations={state.nominations}
+          onClick={removeNomination}
         />
-      )}
-      {mode === LOADING && <Loading />}
-      {mode === DEFAULT && <p>Default</p>}
+      </nav>
+      <div className="content-container">
+        <Search setValues={updateResults} setView={setView} />
 
-      <NominationList
-        nominations={state.nominations}
-        onClick={removeNomination}
-      />
+        {mode === RESULTS && (
+          <ResultList
+            resultList={state.movieList}
+            onClick={nominateFilm}
+            isNominated={isNominated}
+          />
+        )}
+        {mode === LOADING && <Loading />}
+
+        {mode === DEFAULT && (
+          <div className="default-container">
+            <img
+              src={
+                'https://cdn.shopify.com/shopifycloud/brochure/assets/home/hero-stock-small-72c1242fc5bbf6cfe135968110e9c52435af1e389c0fd4fe68208d21427e21e0.jpg'
+              }
+              alt={'default img'}
+            ></img>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
