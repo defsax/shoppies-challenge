@@ -1,5 +1,12 @@
-.nav-bar {
-  position: relative;
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: #fbf7ed;
+}
+
+.nav .nav-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

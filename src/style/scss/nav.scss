@@ -1,6 +1,14 @@
-.nav-bar {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: #fbf7ed;
+
+  .nav-content {
+    // position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

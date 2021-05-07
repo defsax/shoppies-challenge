@@ -2,6 +2,7 @@
   display: flex;
   flex-basis: 35%;
   height: 100vh;
+  position: fixed;
 }
 
 .search-container form {

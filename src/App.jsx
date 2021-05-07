@@ -71,18 +71,19 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <nav class="nav-bar">
-        <h1>The Shoppies</h1>
-        {showBanner()}
+      <nav className="nav">
+        <div className="nav-content">
+          <h1>The Shoppies</h1>
+          {showBanner()}
 
-        <NominationList
-          nominations={state.nominations}
-          onClick={removeNomination}
-        />
+          <NominationList
+            nominations={state.nominations}
+            onClick={removeNomination}
+          />
+        </div>
       </nav>
+      <Search setValues={updateResults} setView={setView} />
       <div className="content-container">
-        <Search setValues={updateResults} setView={setView} />
-
         {mode === RESULTS && (
           <ResultList
             resultList={state.movieList}

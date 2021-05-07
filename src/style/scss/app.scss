@@ -4,12 +4,10 @@ body {
 }
 
 .app-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-
   .content-container {
     display: flex;
+    padding-top: 74px;
+    justify-content: right;
   }
   .result-loading-container {
     display: flex;

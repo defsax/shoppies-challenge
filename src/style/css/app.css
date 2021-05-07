@@ -3,14 +3,10 @@ body {
   margin: 0px;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
 .app-container .content-container {
   display: flex;
+  padding-top: 74px;
+  justify-content: right;
 }
 
 .app-container .result-loading-container {
