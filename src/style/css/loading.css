@@ -29,3 +29,7 @@
   width: 75%;
   top: 50%;
 }
+
+.loading img {
+  max-width: 300px;
+}
