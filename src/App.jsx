@@ -35,9 +35,9 @@ export default function App() {
   };
   const isNominated = function (id) {
     //check if nominations are done first
-    if (state.nominations.length >= 5) {
-      return true;
-    }
+    // if (state.nominations.length >= 5) {
+    //   return true;
+    // }
 
     //find in array of objects
     return state.nominations.find((movie) => {
@@ -77,7 +77,7 @@ export default function App() {
           {showBanner()}
 
           <div className="dropdown">
-            <h1>N o m i n a t i o n s ▼</h1>
+            <h2>N o m i n a t i o n s ▼</h2>
             <div className="dropdown-content">
               {state.nominations.length === 0 && <h3>No Nominations!</h3>}
               <NominationList
@@ -101,13 +101,7 @@ export default function App() {
 
         {mode === DEFAULT && (
           <div className="default-container">
-            <h1>Search For a Movie to Nominate!</h1>
-            {/* <img
-              src={
-                'https://cdn.shopify.com/shopifycloud/brochure/assets/home/hero-stock-small-72c1242fc5bbf6cfe135968110e9c52435af1e389c0fd4fe68208d21427e21e0.jpg'
-              }
-              alt={'default img'}
-            ></img> */}
+            <h1>Search to Nominate!</h1>
           </div>
         )}
       </div>

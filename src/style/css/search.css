@@ -16,3 +16,10 @@
   justify-content: center;
   align-items: center;
 }
+
+.search-container form input {
+  border: none;
+  background-color: #219ab7;
+  box-shadow: 5px 5px black;
+  padding: 1rem;
+}

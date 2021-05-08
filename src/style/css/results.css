@@ -32,12 +32,34 @@
   position: relative;
 }
 
+.result-list-container .movie-container .poster .nominated-badge {
+  position: absolute;
+  display: flex;
+  top: 19%;
+  left: 0%;
+  rotate: -20deg;
+}
+
+.result-list-container .movie-container .poster .nominated-badge h4 {
+  font-family: 'Anton', sans-serif;
+  position: absolute;
+  display: flex;
+  top: 37%;
+  left: -1%;
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 5px 5px black;
+  background-color: #e05263;
+  padding: 0 2rem 0 2rem;
+}
+
 .result-list-container .movie-container .poster .button-container {
   position: absolute;
+  display: flex;
   top: -5%;
   right: 10%;
   width: 40px;
-  display: flex;
 }
 
 .result-list-container .movie-container .poster .button-container button {

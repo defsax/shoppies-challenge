@@ -22,11 +22,6 @@ export default function Result(props) {
     <div className="movie-container">
       <div className="poster">
         {setPoster()}
-        {/* <button
-          onClick={() => props.onClick(movie)}
-          disabled={props.isNominated(movie.imdbID)}
-        >Nominate
-        </button> */}
         <div className="button-container">
           <button
             onClick={() => props.onClick(movie)}
@@ -35,6 +30,21 @@ export default function Result(props) {
             NOMINATE
           </button>
         </div>
+        {props.isNominated(movie.imdbID) && (
+          <div className="nominated-badge">
+            <svg height="200" width="200">
+              <circle
+                cx="100"
+                cy="100"
+                r="80"
+                stroke="#e05263"
+                stroke-width="15"
+                fill="transparent"
+              />
+            </svg>
+            <h4>NOMINATED</h4>
+          </div>
+        )}
       </div>
       <p>
         {movie.Title} ({movie.Year})

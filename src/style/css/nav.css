@@ -23,6 +23,12 @@
   display: inline-block;
 }
 
+.nav .nav-content .dropdown h2 {
+  font-family: 'Anton', sans-serif;
+  color: white;
+  text-shadow: 5px 5px black;
+}
+
 .nav .nav-content .dropdown-content {
   display: none;
   position: absolute;

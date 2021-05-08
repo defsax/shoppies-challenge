@@ -31,15 +31,35 @@
     .poster {
       position: relative;
 
+      .nominated-badge {
+        // display: none;
+        position: absolute;
+        display: flex;
+        top: 19%;
+        left: 0%;
+        rotate: -20deg;
+
+        h4 {
+          @include nominate-font;
+          position: absolute;
+          display: flex;
+          top: 37%;
+          left: -1%;
+          color: white;
+          font-size: 2rem;
+          margin: 0;
+          text-shadow: 5px 5px black;
+          background-color: #e05263;
+          padding: 0 2rem 0 2rem;
+        }
+      }
+
       .button-container {
         position: absolute;
+        display: flex;
         top: -5%;
         right: 10%;
-
         width: 40px;
-
-        display: flex;
-        // justify-content: center;
 
         button {
           writing-mode: vertical-lr;
@@ -66,18 +86,6 @@
 
         right: 9%;
       }
-      // button {
-      //   position: absolute;
-      //   top: 85%;
-      //   right: 5%;
-
-      //   background-color: transparent;
-      //   border: 3px solid red;
-      //   color: red;
-      //   border-radius: 50%;
-      //   width: 50px;
-      //   height: 50px;
-      // }
     }
   }
 }
