@@ -11,3 +11,8 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.nav .nav-content h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Anton', sans-serif;
+}

@@ -1,7 +1,5 @@
 import '../style/css/results.css';
 
-import ribbon from './ribbon.png';
-
 export default function Result(props) {
   const { movie } = props;
 
@@ -24,13 +22,19 @@ export default function Result(props) {
     <div className="movie-container">
       <div className="poster">
         {setPoster()}
-        <button
+        {/* <button
           onClick={() => props.onClick(movie)}
           disabled={props.isNominated(movie.imdbID)}
-        >
-          Nominate
-        </button>
-        <img alt={'ribbon'} src={ribbon} className="ribbon"></img>
+        >Nominate
+        </button> */}
+        <div className="button-container">
+          <button
+            onClick={() => props.onClick(movie)}
+            disabled={props.isNominated(movie.imdbID)}
+          >
+            NOMINATE
+          </button>
+        </div>
       </div>
       <p>
         {movie.Title} ({movie.Year})

@@ -5,6 +5,8 @@
   max-height: 1150px;
   flex-basis: 65%;
   justify-content: space-around;
+  border-top: 5px solid black;
+  padding-top: 1rem;
 }
 
 .result-list-container .movie-container {
@@ -28,29 +30,33 @@
   position: relative;
 }
 
-.result-list-container .movie-container .poster button {
-  position: absolute;
-  top: 85%;
-  right: 5%;
-  background-color: transparent;
-  border: 3px solid red;
-  color: red;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
-
-.result-list-container .movie-container .poster .ribbon {
+.result-list-container .movie-container .poster .button-container {
   position: absolute;
   top: -5%;
   right: 10%;
   width: 40px;
-  height: 150px;
-  box-shadow: 5px 5px black;
+  display: flex;
 }
 
-.result-list-container .movie-container .poster .ribbon:hover {
+.result-list-container .movie-container .poster .button-container button {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  color: #fbf7ed;
+  background-color: #008060;
+  box-shadow: 5px 5px black;
+  border: none;
+  padding: 0.75rem 0 0 0;
+  width: 100%;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Anton', sans-serif;
+}
+
+.result-list-container .movie-container .poster .button-container button:disabled {
+  display: none;
+}
+
+.result-list-container .movie-container .poster .button-container:hover {
   width: 45px;
-  height: 155px;
+  height: 185px;
   right: 9%;
 }

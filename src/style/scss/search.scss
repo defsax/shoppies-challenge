@@ -7,6 +7,13 @@
 
   position: fixed;
 
+  border-right: 5px solid black;
+  width: 35%;
+
+  background-image: url('../../components/bg.png');
+  background-size: 1000px 1000px;
+  background-repeat: repeat;
+
   form {
     width: 100%;
     display: flex;

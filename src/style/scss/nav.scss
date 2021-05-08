@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .nav {
   position: fixed;
   top: 0;
@@ -6,9 +8,12 @@
   background-color: #fbf7ed;
 
   .nav-content {
-    // position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    h1 {
+      @include nominate-font;
+    }
   }
 }
