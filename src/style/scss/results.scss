@@ -5,11 +5,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   max-height: 1150px;
-  flex-basis: 65%;
+  flex-basis: 70%;
   justify-content: space-around;
 
-  border-top: 5px solid black;
-  padding-top: 1rem;
+  margin: 1rem;
 
   .movie-container {
     max-width: 200px;

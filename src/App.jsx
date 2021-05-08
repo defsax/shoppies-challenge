@@ -95,12 +95,13 @@ export default function App() {
 
         {mode === DEFAULT && (
           <div className="default-container">
-            <img
+            <h1>Search For a Movie to Nominate!</h1>
+            {/* <img
               src={
                 'https://cdn.shopify.com/shopifycloud/brochure/assets/home/hero-stock-small-72c1242fc5bbf6cfe135968110e9c52435af1e389c0fd4fe68208d21427e21e0.jpg'
               }
               alt={'default img'}
-            ></img>
+            ></img> */}
           </div>
         )}
       </div>
