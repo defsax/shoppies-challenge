@@ -5,6 +5,13 @@
 }
 
 @mixin nominate-font {
-  font-family: 'Open Sans Condensed', sans-serif;
   font-family: 'Anton', sans-serif;
+}
+
+@mixin nav-font {
+  font-family: 'Lobster', cursive;
+}
+
+@mixin default-font {
+  font-family: 'Open Sans', sans-serif;
 }

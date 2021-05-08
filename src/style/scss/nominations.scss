@@ -1,0 +1,32 @@
+@import 'mixins';
+
+.nomination-item-container {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 1rem;
+
+  img {
+    max-height: 75px;
+  }
+
+  .nomination-title-button {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 0.5rem;
+    justify-content: space-evenly;
+
+    p {
+      margin: 0;
+      @include default-font;
+    }
+
+    button {
+      border: none;
+      background-color: #e05263;
+      width: 4rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+}

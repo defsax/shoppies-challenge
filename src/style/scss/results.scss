@@ -22,7 +22,10 @@
     }
 
     p {
-      margin: 0px;
+      @include nominate-font;
+      margin: 0 0.5rem 0 0.5rem;
+      font-size: 1.3rem;
+      text-align: right;
     }
 
     .poster {

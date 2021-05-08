@@ -73,13 +73,18 @@ export default function App() {
     <div className="app-container">
       <nav className="nav">
         <div className="nav-content">
-          <h1>The Shoppies</h1>
+          <h1>S h o p p i e s</h1>
           {showBanner()}
 
-          <NominationList
-            nominations={state.nominations}
-            onClick={removeNomination}
-          />
+          <div className="dropdown">
+            <h1>N o m i n a t i o n s ▼</h1>
+            <div className="dropdown-content">
+              <NominationList
+                nominations={state.nominations}
+                onClick={removeNomination}
+              />
+            </div>
+          </div>
         </div>
       </nav>
       <Search setValues={updateResults} setView={setView} />

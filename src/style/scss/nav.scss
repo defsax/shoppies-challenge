@@ -7,13 +7,32 @@
   z-index: 5;
   background-color: #008060;
 
+  @include nav-font;
+
   .nav-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 4rem;
 
-    h1 {
-      @include nominate-font;
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      min-width: 160px;
+      box-shadow: 5px 5px black;
+      background-color: #fbf7ed;
+      border: 5px solid black;
+      padding: 12px 12px;
+      z-index: 6;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
   }
 }

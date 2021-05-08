@@ -1,4 +1,5 @@
 import NominationItem from './nominationItem';
+import '../style/css/nominations.css';
 
 export default function NominationList(props) {
   const { nominations } = props;
@@ -16,8 +17,7 @@ export default function NominationList(props) {
     }
   };
   return (
-    <div>
-      <h2>Nominations:</h2>
+    <div className="nomination-list-container">
       {listNominations(nominations)}
     </div>
   );

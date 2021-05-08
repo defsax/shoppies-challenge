@@ -1,0 +1,28 @@
+.nomination-item-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.nomination-item-container img {
+  max-height: 75px;
+}
+
+.nomination-item-container .nomination-title-button {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+  justify-content: space-evenly;
+}
+
+.nomination-item-container .nomination-title-button p {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nomination-item-container .nomination-title-button button {
+  border: none;
+  background-color: #e05263;
+  width: 4rem;
+  font-family: 'Open Sans', sans-serif;
+}
