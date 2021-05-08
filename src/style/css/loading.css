@@ -1,0 +1,31 @@
+.rotate {
+  animation: rotate 2s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.linear {
+  animation-timing-function: linear;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+.loading {
+  display: flex;
+  flex-grow: 1;
+  max-height: 100vh;
+  flex-basis: 65%;
+  justify-content: center;
+  position: fixed;
+  width: 75%;
+  top: 50%;
+}

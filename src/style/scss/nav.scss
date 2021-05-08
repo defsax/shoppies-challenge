@@ -15,6 +15,10 @@
     justify-content: space-between;
     margin: 0 4rem;
 
+    h3 {
+      @include default-font;
+    }
+
     .dropdown {
       position: relative;
       display: inline-block;

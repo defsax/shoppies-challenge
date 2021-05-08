@@ -79,6 +79,7 @@ export default function App() {
           <div className="dropdown">
             <h1>N o m i n a t i o n s ▼</h1>
             <div className="dropdown-content">
+              {state.nominations.length === 0 && <h3>No Nominations!</h3>}
               <NominationList
                 nominations={state.nominations}
                 onClick={removeNomination}
