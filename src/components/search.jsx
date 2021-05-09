@@ -18,6 +18,7 @@ export default function Search(props) {
     // check length. if not, api will get called when page loads
     if (debouncedText) {
       const KEY = process.env.REACT_APP_OMDB_API_KEY;
+
       axios
         .get(
           `http://www.omdbapi.com/?apikey=${KEY}&s=${debouncedText}*&type=movie`
