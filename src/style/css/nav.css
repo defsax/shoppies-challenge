@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 6;
   background-color: #008060;
   font-family: 'Lobster', cursive;
 }
@@ -12,6 +12,10 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0 4rem;
+}
+
+.nav .nav-content h1 {
+  margin: auto 0;
 }
 
 .nav .nav-content h3 {
@@ -35,7 +39,9 @@
   min-width: 160px;
   box-shadow: 5px 5px black;
   background-color: #fbf7ed;
-  border: 5px solid black;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
   padding: 12px 12px;
   z-index: 6;
 }

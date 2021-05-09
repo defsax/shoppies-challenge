@@ -2,7 +2,6 @@
 
 .search-container {
   display: flex;
-  flex-basis: 35%;
   height: 100vh;
 
   position: fixed;
@@ -15,10 +14,11 @@
   background-repeat: repeat;
 
   form {
-    width: 100%;
+    position: absolute;
+    top: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    width: 100%;
 
     input {
       border: none;
@@ -26,6 +26,51 @@
       background-color: #219ab7;
       box-shadow: 5px 5px black;
       padding: 1rem;
+
+      color: white;
+      // @include default-font;
+    }
+    input:focus {
+      box-shadow: 10px 10px black;
+      outline: 5px solid #ffb700;
     }
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .search-container {
+    height: 25vh;
+
+    position: fixed;
+    top: 75px;
+    z-index: 5;
+
+    background-color: rgba($color: #000000, $alpha: 0.75);
+
+    align-items: center;
+
+    border-right: none;
+    border-bottom: 5px solid black;
+    width: 100%;
+    form {
+      position: initial;
+
+      input {
+        border: none;
+
+        background-color: #219ab7;
+        box-shadow: 5px 5px black;
+        padding: 1rem;
+
+        color: white;
+      }
+      input:focus {
+        box-shadow: 10px 10px black;
+        outline: 5px solid #ffb700;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
 }

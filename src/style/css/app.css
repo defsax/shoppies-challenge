@@ -6,10 +6,20 @@ body {
 .app-container .content-container {
   display: flex;
   padding-top: 74px;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
 .app-container .result-loading-container {
   display: flex;
   width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .app-container .content-container {
+    padding-top: 250px;
+  }
+  .app-container .result-loading-container {
+    display: flex;
+    width: 100%;
+  }
 }

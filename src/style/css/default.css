@@ -1,8 +1,6 @@
 .default-container {
   display: flex;
-  flex-grow: 1;
   max-height: 100vh;
-  flex-basis: 65%;
   justify-content: center;
   position: fixed;
   width: 75%;

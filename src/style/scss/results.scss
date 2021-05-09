@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-height: 1150px;
   flex-basis: 70%;
   justify-content: space-around;
 
@@ -60,6 +59,7 @@
         top: -5%;
         right: 10%;
         width: 40px;
+        height: 172px;
 
         button {
           writing-mode: vertical-lr;
@@ -87,5 +87,11 @@
         right: 9%;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .result-list-container {
+    flex-basis: 100%;
   }
 }
