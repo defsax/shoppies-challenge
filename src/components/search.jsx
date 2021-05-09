@@ -21,7 +21,7 @@ export default function Search(props) {
 
       axios
         .get(
-          `http://www.omdbapi.com/?apikey=${KEY}&s=${debouncedText}*&type=movie`
+          `https://www.omdbapi.com/?apikey=${KEY}&s=${debouncedText}*&type=movie`
         )
         .then((response) => {
           if (response.data.Response !== 'False') {
