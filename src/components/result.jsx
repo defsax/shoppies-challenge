@@ -38,7 +38,7 @@ export default function Result(props) {
                 cy="100"
                 r="80"
                 stroke="#e05263"
-                stroke-width="15"
+                strokeWidth="15"
                 fill="transparent"
               />
             </svg>

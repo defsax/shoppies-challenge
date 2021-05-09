@@ -77,7 +77,7 @@ export default function App() {
           {showBanner()}
 
           <div className="dropdown">
-            <h2>N o m i n a t i o n s ▼</h2>
+            <h2>n o m i n a t i o n s ▼</h2>
             <div className="dropdown-content">
               {state.nominations.length === 0 && <h3>No Nominations!</h3>}
               <NominationList
@@ -101,7 +101,7 @@ export default function App() {
 
         {mode === DEFAULT && (
           <div className="default-container">
-            <h1>Search to Nominate!</h1>
+            <h1>Search for a movie to nominate for a shoppie award!</h1>
           </div>
         )}
       </div>

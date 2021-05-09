@@ -6,7 +6,7 @@ body {
 .app-container {
   .content-container {
     display: flex;
-    padding-top: 74px;
+    padding-top: 46px;
     justify-content: flex-end;
   }
   .result-loading-container {
@@ -18,7 +18,7 @@ body {
 @media only screen and (max-width: 768px) {
   .app-container {
     .content-container {
-      padding-top: 250px;
+      padding-top: 183px;
     }
     .result-loading-container {
       display: flex;

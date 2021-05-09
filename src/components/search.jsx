@@ -53,6 +53,7 @@ export default function Search(props) {
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           autoFocus
+          placeholder="SEARCH"
           type="text"
           onChange={(e) => handleInput(e.target.value)}
         ></input>

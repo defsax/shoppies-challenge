@@ -11,3 +11,14 @@
 
   @include default-font;
 }
+
+@media only screen and (max-width: 768px) {
+  .default-container {
+    width: 100vw;
+    top: 40%;
+
+    h1 {
+      padding: 4rem;
+    }
+  }
+}

@@ -36,7 +36,7 @@
   display: flex;
   top: 19%;
   left: 0%;
-  rotate: -20deg;
+  transform: rotate(-20deg);
 }
 
 .result-list-container .movie-container .poster .nominated-badge h4 {
@@ -44,7 +44,6 @@
   position: absolute;
   display: flex;
   top: 37%;
-  left: -1%;
   color: white;
   font-size: 2rem;
   margin: 0;
@@ -87,5 +86,14 @@
 @media only screen and (max-width: 768px) {
   .result-list-container {
     flex-basis: 100%;
+    margin: 1rem 0 0 0;
+    overflow: hidden;
+  }
+  .result-list-container .movie-container {
+    max-width: 150px;
+  }
+  .result-list-container .movie-container .poster .nominated-badge {
+    top: 3%;
+    left: -17%;
   }
 }

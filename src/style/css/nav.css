@@ -1,7 +1,7 @@
 .nav {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 6;
   background-color: #008060;
   font-family: 'Lobster', cursive;
@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 4rem;
+  margin: 0.5rem 4rem;
 }
 
 .nav .nav-content h1 {
@@ -28,9 +28,9 @@
 }
 
 .nav .nav-content .dropdown h2 {
-  font-family: 'Anton', sans-serif;
-  color: white;
-  text-shadow: 5px 5px black;
+  margin: auto 0;
+  font-family: 'Lobster', cursive;
+  color: black;
 }
 
 .nav .nav-content .dropdown-content {
@@ -48,4 +48,13 @@
 
 .nav .nav-content .dropdown:hover .dropdown-content {
   display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav {
+    height: 48px;
+  }
+  .nav .nav-content {
+    margin: 0.5rem 1rem;
+  }
 }
