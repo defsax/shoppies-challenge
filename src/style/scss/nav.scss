@@ -19,6 +19,10 @@
       margin: auto 0;
     }
 
+    h3 {
+      @include default-font;
+    }
+
     .dropdown {
       position: relative;
       display: inline-block;
