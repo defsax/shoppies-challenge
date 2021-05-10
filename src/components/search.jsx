@@ -6,16 +6,12 @@ import { useDebounce } from '../utils';
 import '../style/css/search.css';
 
 export default function Search(props) {
-  // let myStorage = window.localStorage;
-  localStorage.setItem('myCat', 'Tom');
-  localStorage.getItem('myCat');
-
+  const { setValues, setView } = props;
   const [searchText, setSearchText] = useState('');
-
   const debouncedText = useDebounce(searchText, 1000);
 
   useEffect(() => {
-    // check length. if not, api will get called when page loads
+    // check whether there is text. if not, api will get called when page loads
     if (debouncedText) {
       const KEY = process.env.REACT_APP_OMDB_API_KEY;
 
@@ -26,20 +22,18 @@ export default function Search(props) {
         .then((response) => {
           if (response.data.Response !== 'False') {
             const results = response.data.Search;
-            console.log(results);
-            props.setValues(results);
-            props.setView('RESULTS', true);
+            setValues(results);
+            setView('RESULTS', true);
           }
         })
         .catch(function (error) {
           console.log(error);
         });
     }
-  }, [debouncedText]);
+  }, [debouncedText, setValues]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleInput = function (input) {
     if (input.length) {
-      console.log('non debounced text:', input);
       setSearchText(input);
       props.setView('LOADING', false);
     } else {

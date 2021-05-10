@@ -19,16 +19,12 @@
       margin: auto 0;
     }
 
-    h3 {
-      @include default-font;
-    }
-
     .dropdown {
       position: relative;
       display: inline-block;
 
       h2 {
-        margin: auto 0;
+        margin: auto 1rem auto 0;
         @include nav-font;
         color: black;
       }
