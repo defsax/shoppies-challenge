@@ -74,7 +74,6 @@ export default function App() {
       <nav className="nav">
         <div className="nav-content">
           <h1>S h o p p i e s</h1>
-          {showBanner()}
 
           <div className="dropdown">
             <h2>n o m i n a t i o n s ▼</h2>
@@ -88,7 +87,11 @@ export default function App() {
           </div>
         </div>
       </nav>
-      <Search setValues={updateResults} setView={setView} />
+      <Search
+        setValues={updateResults}
+        setView={setView}
+        displayBanner={showBanner}
+      />
       <div className="content-container">
         {mode === RESULTS && (
           <ResultList

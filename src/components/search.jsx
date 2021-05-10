@@ -50,6 +50,7 @@ export default function Search(props) {
 
   return (
     <div className="search-container">
+      {props.displayBanner()}
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           autoFocus

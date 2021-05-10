@@ -4,16 +4,17 @@
   justify-content: center;
   position: fixed;
   width: 75%;
-  top: 50%;
+  top: 40%;
   font-family: 'Open Sans', sans-serif;
+}
+
+.default-container h1 {
+  padding: 4rem;
 }
 
 @media only screen and (max-width: 768px) {
   .default-container {
     width: 100vw;
     top: 40%;
-  }
-  .default-container h1 {
-    padding: 4rem;
   }
 }
