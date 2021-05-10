@@ -25,12 +25,12 @@ export default function Result(props) {
         <div className="button-container">
           <button
             onClick={() => props.onClick(movie)}
-            disabled={props.isNominated(movie.imdbID)}
+            disabled={props.nominationsDone(movie.imdbID)}
           >
             NOMINATE
           </button>
         </div>
-        {props.isNominated(movie.imdbID) && (
+        {props.isNominated(movie.imdbID) && true && (
           <div className="nominated-badge">
             <svg height="200" width="200">
               <circle

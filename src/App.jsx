@@ -34,15 +34,21 @@ export default function App() {
     });
   };
   const isNominated = function (id) {
-    //check if nominations are done first
-    // if (state.nominations.length >= 5) {
-    //   return true;
-    // }
-
     //find in array of objects
     return state.nominations.find((movie) => {
       return movie.imdbID === id;
     });
+  };
+
+  const nominationsDone = function (id) {
+    const match = state.nominations.find((movie) => {
+      return movie.imdbID === id;
+    });
+
+    // check if nominations are done
+    if (state.nominations.length >= 5 || match) {
+      return true;
+    }
   };
 
   const updateResults = function (results) {
@@ -98,6 +104,7 @@ export default function App() {
             resultList={state.movieList}
             onClick={nominateFilm}
             isNominated={isNominated}
+            nominationsDone={nominationsDone}
           />
         )}
         {mode === LOADING && <Loading />}
