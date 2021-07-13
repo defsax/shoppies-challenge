@@ -8,22 +8,23 @@ This is Perry Defayette's submission for the Fall 2021 Shopify Front End Softwar
 
 1. To run on your local machine, clone project:
 
-    - SSH: ```git@github.com:defsax/shoppies-challenge.git```
+   - SSH: `git@github.com:defsax/shoppies-challenge.git`
 
-    - HTTPS: ```https://github.com/defsax/shoppies-challenge.git```
+   - HTTPS: `https://github.com/defsax/shoppies-challenge.git`
 
-2. Access folder: ```cd shoppies-challenge```
+2. Access folder: `cd shoppies-challenge`
 
-3. Initialize react: ```npm install```
+3. Initialize react: `npm install`
 
 4. Create an API Key: https://www.omdbapi.com/apikey.aspx
 
 5. Create a .env file to store API Key in root directory of project. Add the following line:
-    ```
-    REACT_APP_OMDB_API_KEY=*YOUR API KEY HERE*
-    ```
 
-6. Start the development server: ```npm start```
+   ```
+   REACT_APP_OMDB_API_KEY=*YOUR API KEY HERE*
+   ```
+
+6. Start the development server: `npm start`
 
 ## Stack
 
@@ -42,3 +43,7 @@ This single-page project was built using React. HTTP calls to the OMDB Api are d
 ![Mobile View](https://raw.githubusercontent.com/defsax/shoppies-challenge/master/public/resources/screenshots/mobileview1.png)
 
 ![Mobile View 2](https://raw.githubusercontent.com/defsax/shoppies-challenge/master/public/resources/screenshots/mobileview2.png)
+
+## Troubleshooting
+
+Run `npm update` if app cannot launch.

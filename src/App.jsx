@@ -1,19 +1,19 @@
-import { useState, useEffect, useCallback } from 'react';
-import Search from './components/search';
-import ResultList from './components/resultList';
-import NominationList from './components/nominationList';
-import Loading from './components/loading';
+import { useState, useEffect, useCallback } from "react";
+import Search from "./components/search";
+import ResultList from "./components/resultList";
+import NominationList from "./components/nominationList";
+import Loading from "./components/loading";
 
-import { useVisualMode } from './utils';
+import { useVisualMode } from "./utils";
 
-import './style/css/app.css';
-import './style/css/default.css';
-import './style/css/nav.css';
+import "./style/css/app.css";
+import "./style/css/default.css";
+import "./style/css/nav.css";
 
 export default function App() {
-  const LOADING = 'LOADING';
-  const DEFAULT = 'DEFAULT';
-  const RESULTS = 'RESULTS';
+  const LOADING = "LOADING";
+  const DEFAULT = "DEFAULT";
+  const RESULTS = "RESULTS";
 
   const { mode, transition } = useVisualMode(DEFAULT);
 
@@ -24,14 +24,21 @@ export default function App() {
 
   //load saved nominations on page load
   useEffect(() => {
-    const noms = JSON.parse(localStorage.getItem('shoppies-nominations'));
-    setState((s) => ({ ...s, nominations: noms }));
+    //check if local storage has stored movie data
+    if (JSON.parse(localStorage.getItem("shoppies-nominations"))) {
+      //if it does, set state
+      const noms = JSON.parse(localStorage.getItem("shoppies-nominations"));
+      setState((s) => ({ ...s, nominations: noms }));
+    } else {
+      //if it doesn't, set local storage to an empty array so we don't get an error
+      localStorage.setItem("shoppies-nominations", JSON.stringify([]));
+    }
   }, []);
 
   //save nominations on state nominations update
   useEffect(() => {
     localStorage.setItem(
-      'shoppies-nominations',
+      "shoppies-nominations",
       JSON.stringify(state.nominations)
     );
   }, [state.nominations]);
