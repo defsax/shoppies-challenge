@@ -18,6 +18,10 @@
   margin: auto 0;
 }
 
+.nav .nav-content h3 {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .nav .nav-content .dropdown {
   position: relative;
   display: inline-block;
